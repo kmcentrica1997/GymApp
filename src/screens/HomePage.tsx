@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {View, StyleSheet} from 'react-native';
 
-const DashBoard: FC = props => {
+const Home: FC = props => {
   return <View></View>;
 };
 
@@ -10,4 +10,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export default DashBoard;
+export default Home;

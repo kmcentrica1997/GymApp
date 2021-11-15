@@ -1,3 +1,5 @@
 import Login from './Login';
+import Home from './HomePage';
+import DashBoard from './DashBoard';
 
-export {Login};
+export {Login, Home, DashBoard};
