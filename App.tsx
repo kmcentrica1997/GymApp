@@ -9,10 +9,18 @@
  */
 
 import React from 'react';
-import {Login} from './src/screens';
-
+import {DashBoard} from './src/screens';
+import {connect, Provider} from 'react-redux';
+import store from './src/redux/store';
+import { getTodosRequest } from './src/redux/actions/todos';
 const App = () => {
-  return <Login />;
+  return (
+    <Provider store={store}>
+      <DashBoard />
+    </Provider>
+  );
 };
 
-export default App;
+export default connect(({todos}) => ({todos}), {
+  getTodosRequest,
+})(App);
