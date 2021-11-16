@@ -16,10 +16,6 @@ const DashBoard: FC = () => {
     api();
   }, []);
 
-  const renderItem: Function = ({title}) => (
-    <Text style={styles.container}>{title}</Text>
-  );
-
   return (
     <SafeAreaView>
       <FlatList

@@ -1,5 +1,5 @@
 export const ActionTypes = {
-  GET_TODOS_REQUEST: 'todos/get_todos_request',
-  GET_TODOS_SUCCESS: 'todos/get_todos_success',
-  TODOS_ERROR: 'todos/todos_error',
+  GET_USERS_REQUEST: 'users/get_users_request',
+  GET_USERS_SUCCESS: 'users/get_users_success',
+  USERS_ERROR: 'users/users_error',
 };

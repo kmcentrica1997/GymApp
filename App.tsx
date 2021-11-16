@@ -12,8 +12,8 @@ import React from 'react';
 import {DashBoard} from './src/screens';
 import {connect, Provider} from 'react-redux';
 import store from './src/redux/store';
-import { getTodosRequest } from './src/redux/actions/todos';
-const App = () => {
+import {getTodosRequest} from './src/redux/actions/users';
+const App = (props) => {
   return (
     <Provider store={store}>
       <DashBoard />
@@ -21,6 +21,6 @@ const App = () => {
   );
 };
 
-export default connect(({todos}) => ({todos}), {
+export default connect(({users}) => ({users}), {
   getTodosRequest,
 })(App);

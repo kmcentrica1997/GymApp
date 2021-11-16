@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getTodos = () => {
+export const getUsers = () => {
   axios
     .get('https://jsonplaceholder.typicode.com/todos/1')
     .then(function (response) {
