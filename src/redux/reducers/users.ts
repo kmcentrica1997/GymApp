@@ -1,4 +1,4 @@
-import {ActionTypes} from '../redux/constants/action-types';
+import {UserActionTypes} from '../constants/user-action-types';
 
 const INITIAL_STATE = {
   items: [],
@@ -6,13 +6,13 @@ const INITIAL_STATE = {
 
 export default function users(state = INITIAL_STATE, action: any) {
   switch (action.type) {
-    case ActionTypes.GET_USERS_SUCCESS: {
+    case UserActionTypes.GET_USERS_SUCCESS: {
       return {
         ...state,
         items: action.payload.items,
       };
     }
-    case ActionTypes.USERS_ERROR: {
+    case UserActionTypes.USERS_ERROR: {
       return {
         ...state,
         items: action.payload.error,

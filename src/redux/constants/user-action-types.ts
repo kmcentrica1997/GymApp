@@ -1,4 +1,4 @@
-export const ActionTypes = {
+export const UserActionTypes = {
   GET_USERS_REQUEST: 'users/get_users_request',
   GET_USERS_SUCCESS: 'users/get_users_success',
   USERS_ERROR: 'users/users_error',

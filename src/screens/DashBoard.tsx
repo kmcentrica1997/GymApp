@@ -1,29 +1,12 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Alert, FlatList, SafeAreaView, StyleSheet, Text} from 'react-native';
-import {getExercises} from '../services/api';
+import {FlatList, Text, SafeAreaView, StyleSheet, View} from 'react-native';
 import axios from 'axios';
 
 const DashBoard: FC = () => {
-  const [data, setData] = useState([] as any[]);
-
-  useEffect(() => {
-    const api = async () => {
-      const response = await axios(
-        'https://jsonplaceholder.typicode.com/todos',
-      );
-      setData(response.data);
-    };
-    api();
-  }, []);
-
   return (
-    <SafeAreaView>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
-    </SafeAreaView>
+    <View>
+      <Text>hi</Text>
+    </View>
   );
 };
 
