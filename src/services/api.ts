@@ -1,9 +1,12 @@
 import axios from 'axios';
 
 export const getUsers = () => {
-  return axios.get('/users', {
-    params: {
-      limit: 1000,
-    },
+  return new Promise((resolve, reject) => {
+    axios
+      .get('https://rem-rest-api.herokuapp.com/api/users')
+      .then(res => {
+        resolve(res);
+      })
+      .catch(err => reject(err));
   });
 };

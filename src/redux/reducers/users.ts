@@ -1,7 +1,7 @@
 import {UserActionTypes} from '../constants/user-action-types';
 
 const INITIAL_STATE = {
-  items: [],
+  items: ['not working'],
 };
 
 export default function users(state = INITIAL_STATE, action: any) {

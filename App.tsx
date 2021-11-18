@@ -12,9 +12,14 @@ import React from 'react';
 import {DashBoard} from './src/screens';
 import {connect, Provider} from 'react-redux';
 import store from './src/redux/store';
+import {View, Text} from 'react-native';
 
 const App = props => {
-  return <DashBoard />;
+  return (
+    <View>
+      <Text>hi</Text>
+    </View>
+  );
 };
 
 export default App;
