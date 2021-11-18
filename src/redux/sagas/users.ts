@@ -1,6 +1,5 @@
 import {put, call, fork, takeEvery} from 'redux-saga/effects';
 import * as actions from '../actions/users';
-import {UserActionTypes} from '../constants/user-action-types';
 import * as api from '../../services/api';
 
 export interface ResponseGenerator {
@@ -12,7 +11,7 @@ export interface ResponseGenerator {
   statusText?: string;
 }
 
-function* getUsers() {
+function* getUsersGenerator() {
   try {
     const result: ResponseGenerator = yield call(api.getUsers);
     yield put(
@@ -30,7 +29,7 @@ function* getUsers() {
 }
 
 function* watchGetUsersRequest() {
-  yield takeEvery(UserActionTypes.GET_USERS_REQUEST, getUsers);
+  yield takeEvery(actions.getUsersRequest, getUsersGenerator);
 }
 
 const userSagas = [fork(watchGetUsersRequest)];

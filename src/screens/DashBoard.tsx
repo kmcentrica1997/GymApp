@@ -1,13 +1,16 @@
-import React, {FC, useEffect, useState} from 'react';
-import {FlatList, Text, StyleSheet, View} from 'react-native';
+import React, {FC, useEffect} from 'react';
+import {Text, StyleSheet, SafeAreaView} from 'react-native';
 import {useDispatch, RootStateOrAny, useSelector} from 'react-redux';
-import { getUsersSuccess } from '../redux/actions/users';
-import {getUsers} from '../services/api';
+import {getUsersRequest} from '../redux/actions/users';
 
 const DashBoard: FC = () => {
-  const [t, setT] = useState([]);
-  const allUsers = useSelector((state: RootStateOrAny) => state.users.items);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getUsersRequest());
+  }, [dispatch]);
+
+  const allUsers = useSelector((state: RootStateOrAny) => state.users.items);
   // useEffect(() => {
   //   (async () => {
   //     console.log(
@@ -20,22 +23,29 @@ const DashBoard: FC = () => {
   //   })();
   // }, []);
 
-  console.log('allUsers', allUsers);
   return (
-    <View>
-      <Text>HELLLLLLLO</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      {allUsers.map((user: any) => {
+        return <Text style={styles.text}>{user.firstName}</Text>;
+      })}
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   item: {
     padding: 10,
     fontSize: 18,
     height: 44,
+  },
+  text: {
+    fontFamily: 'Cochin',
+    fontSize: 30,
   },
 });
 export default DashBoard;
