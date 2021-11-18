@@ -23,11 +23,13 @@ const DashBoard: FC = () => {
   //   })();
   // }, []);
 
+  // perhaps set timer?
   return (
     <SafeAreaView style={styles.container}>
-      {allUsers.map((user: any) => {
-        return <Text style={styles.text}>{user.firstName}</Text>;
-      })}
+      {allUsers &&
+        allUsers.map((user: any) => {
+          return <Text style={styles.text}>{user.firstName}</Text>;
+        })}
     </SafeAreaView>
   );
 };
@@ -46,6 +48,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Cochin',
     fontSize: 30,
+    color: 'white',
   },
 });
 export default DashBoard;
