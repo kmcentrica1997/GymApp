@@ -1,4 +1,6 @@
 import axios from 'axios';
+// for asynchronous operation
+// either resolves with the data, or catches the error.
 
 export const getUsers = () => {
   return new Promise((resolve, reject) => {

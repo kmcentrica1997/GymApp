@@ -1,6 +1,7 @@
 import React, {FC, useEffect} from 'react';
 import {Text, Image, StyleSheet, SafeAreaView} from 'react-native';
 import {useDispatch, RootStateOrAny, useSelector} from 'react-redux';
+import {Loading} from '../components/Loading/Loading';
 import {getUsersRequest} from '../redux/actions/users';
 
 const DashBoard: FC = () => {
@@ -26,15 +27,7 @@ const DashBoard: FC = () => {
   // perhaps set timer?
   return (
     <SafeAreaView style={styles.container}>
-      {!allUsers.length && (
-        <Text style={styles.loading}>
-          Loading...
-          <Image
-            style={styles.image}
-            source={require('/Users/km00776/Desktop/RNprojects/GymApp/src/img/tired.png')}
-          />
-        </Text>
-      )}
+      {!allUsers.length && <Loading />}
       {allUsers &&
         allUsers.map((user: any) => {
           return (
