@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "marginTop": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "column",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 30,
+          "fontWeight": "bold",
+          "marginTop": 300,
+          "textAlign": "center",
+          "width": 200,
+        }
+      }
+    >
+      Loading...
+       
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/img/tired.png",
+          }
+        }
+        style={
+          Object {
+            "height": 50,
+            "marginLeft": 5,
+            "width": 50,
+          }
+        }
+      />
+    </Text>
+  </View>
+</View>
+`;

@@ -1,4 +1,4 @@
-import {put, call, fork, takeEvery} from 'redux-saga/effects';
+import {put, call, takeLatest} from 'redux-saga/effects';
 import * as actions from '../actions/users';
 import * as api from '../../services/api';
 
@@ -36,9 +36,8 @@ function* getUsersGenerator() {
 // watches for whenever getusersrequest action is dispatched, if so calls getUseers generator
 // forks a worker on every action
 function* watchGetUsersRequest() {
-  yield takeEvery(actions.getUsersRequest, getUsersGenerator);
+  yield takeLatest(actions.getUsersRequest, getUsersGenerator);
 }
 // allows for multiple sagas to run without being blocked if one is blocked
-const userSagas = [fork(watchGetUsersRequest)];
 
-export default userSagas;
+export default watchGetUsersRequest;
