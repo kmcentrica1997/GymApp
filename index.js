@@ -8,15 +8,25 @@ import {Provider} from 'react-redux';
 import React from 'react';
 import store from './src/redux/store';
 import {SafeAreaView} from 'react-native';
-import {DashBoard} from './src/screens';
+import {DashBoard, Login} from './src/screens';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Provider store={store}>
-        <DashBoard />
-      </Provider>
-    </SafeAreaView>
+    <Provider store={store}>
+      <NavigationContainer style={styles.container}>
+        <Stack.Navigator initialRouteName="HomePage">
+          <Stack.Screen
+            style={styles.container}
+            name="Home"
+            component={DashBoard}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 

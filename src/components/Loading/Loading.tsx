@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     marginTop: 300,
     width: 200,
     fontSize: 30,
-    color: 'white', // Centered horizontally
+    color: 'black', // Centered horizontally
   },
   container: {
     flexDirection: 'column',

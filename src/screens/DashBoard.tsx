@@ -12,6 +12,7 @@ const DashBoard: FC = () => {
   }, [dispatch]);
 
   const allUsers = useSelector((state: RootStateOrAny) => state.users.items);
+
   // useEffect(() => {
   //   (async () => {
   //     console.log(
@@ -25,6 +26,7 @@ const DashBoard: FC = () => {
   // }, []);
 
   // perhaps set timer?
+
   return (
     <View style={styles.container}>
       {!allUsers.length && <Loading />}
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Cochin',
     fontSize: 30,
-    color: 'white',
+    color: 'black',
   },
   image: {
     marginLeft: 5,
