@@ -29,7 +29,7 @@ const DashBoard: FC = () => {
 
   return (
     <View style={styles.container}>
-      {!allUsers.length && <Loading />}
+      {!allUsers?.length && <Loading />}
       {allUsers &&
         allUsers.map((user: any) => {
           return (

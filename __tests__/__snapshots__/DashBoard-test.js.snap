@@ -23,7 +23,7 @@ exports[`snapshot 1`] = `
     <Text
       style={
         Object {
-          "color": "white",
+          "color": "black",
           "fontSize": 30,
           "fontWeight": "bold",
           "marginTop": 300,

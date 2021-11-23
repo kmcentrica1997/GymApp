@@ -22,7 +22,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#581845',
+    backgroundColor: 'red',
     flex: 1,
   },
 });

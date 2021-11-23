@@ -17,12 +17,12 @@ export const Loading: FC = () => {
 
 const styles = StyleSheet.create({
   loading: {
-    textAlign: 'center', // <-- the magic
+    textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 300,
     width: 200,
     fontSize: 30,
-    color: 'black', // Centered horizontally
+    color: 'black',
   },
   container: {
     flexDirection: 'column',
