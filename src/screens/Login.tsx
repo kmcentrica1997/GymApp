@@ -1,20 +1,29 @@
+import {StackNavigationProp} from '@react-navigation/stack';
 import React, {FC} from 'react';
-import {View, Text, StyleSheet, Button, Alert} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 
-const Login: FC = () => {
+type NavigatorParamsList = {
+  Login: undefined;
+  Dashboard: undefined;
+};
+
+export interface HomeProps {
+  navigation: StackNavigationProp<NavigatorParamsList, 'Login'>;
+}
+
+const Login: FC<HomeProps> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text>Login Screen</Text>
       <Button
         title="Next Page"
-        onPress={() => Alert.alert('Simple Button pressed')}
+        onPress={() => navigation.navigate('Dashboard')}
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
       />
     </View>
   );
 };
-
 export default Login;
 
 const styles = StyleSheet.create({
