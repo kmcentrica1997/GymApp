@@ -1,10 +1,16 @@
+import {StackNavigationProp} from '@react-navigation/stack';
 import React, {FC, useEffect} from 'react';
 import {Text, StyleSheet, View, Image, FlatList} from 'react-native';
 import {useDispatch, RootStateOrAny, useSelector} from 'react-redux';
 import {Loading} from '../components/Loading/Loading';
 import * as actions from '../redux/actions/users';
+import {NavigatorParamsList} from '../types';
 
-const DashBoard: FC = () => {
+export interface DashBoardProps {
+  navigation: StackNavigationProp<NavigatorParamsList, 'DashBoard'>;
+}
+
+const DashBoard: FC<DashBoardProps> = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -60,7 +66,8 @@ const DashBoard: FC = () => {
       <FlatList
         data={allUsers}
         renderItem={_renderItem}
-        keyExtractor={(item, index) => index.toString()}
+        style={styles.list}
+        keyExtractor={index => index.id}
       />
     </View>
   );
@@ -70,8 +77,14 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 30,
+    marginLeft: 34,
     justifyContent: 'center',
+    flex: 1,
+  },
+  list: {
+    width: 100,
+    flex: 1,
   },
   item: {
     padding: 10,

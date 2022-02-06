@@ -5,9 +5,11 @@ exports[`snapshot 1`] = `
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "column",
       "justifyContent": "center",
-      "marginTop": 40,
+      "marginLeft": 34,
+      "marginTop": 30,
     }
   }
 >
@@ -50,5 +52,30 @@ exports[`snapshot 1`] = `
       />
     </Text>
   </View>
+  <RCTScrollView
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "flex": 1,
+        "width": 100,
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View />
+  </RCTScrollView>
 </View>
 `;

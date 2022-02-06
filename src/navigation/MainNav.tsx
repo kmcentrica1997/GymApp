@@ -8,8 +8,8 @@ const MainNavigator: React.FC = () => {
 
   return (
     <Navigator>
-      <Screen name="Login" component={Login} />
-      <Screen name="Dashboard" component={DashBoard} />
+      <Screen name="Home" component={Login} />
+      <Screen name="DashBoard" component={DashBoard} />
     </Navigator>
   );
 };
